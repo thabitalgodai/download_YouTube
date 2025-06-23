@@ -19,7 +19,13 @@ s2: PN51tJhZscE
 */
 if(window.eruda == null && localStorage.getItem("devMode") == "true"){
 //ERUDA
-window.location.href=`javascript:(function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init();} })();`;
+if (window.eruda == null && localStorage.getItem("devMode") == "true") {
+  (function () {
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/gh/thabitalgodai/download_YouTube/eruda.js";
+    document.body.appendChild(script);
+    script.onload = function () { eruda.init(); };
+  })();
 }
 /**/
 
@@ -895,10 +901,17 @@ Android.setBgPlay(true);
 Android.setBgPlay(false);
 }
 
-if(localStorage.getItem("devMode") == "false"){
-try{eruda.destroy();}catch{}
-}else{
-window.location.href=`javascript:(function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init();} })();`;
+if (localStorage.getItem("devMode") == "false") {
+  try {
+    eruda.destroy();
+  } catch {}
+} else {
+  (function () {
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/gh/thabitalgodai/download_YouTube/eruda.js";
+    document.body.appendChild(script);
+    script.onload = function () { eruda.init(); };
+  })();
 }
 
 
@@ -1089,7 +1102,7 @@ window.location.href=e.destination.url;
 var script = doc.createElement("script");
 var scriptSource=`window.addEventListener('DOMContentLoaded', function() {
 var script2 = document.createElement('script');
-script2.src="//cdn.jsdelivr.net/npm/ytpro";
+script2.src = "https://raw.githubusercontent.com/thabitalgodai/download_YouTube/main/js/ytpro.js";
 document.body.appendChild(script2);
 });
 `;
@@ -1104,7 +1117,7 @@ window.location.href=e.destination.url;
 var script = doc.createElement("script");
 var scriptSource=`window.addEventListener('DOMContentLoaded', function() {
 var script2 = document.createElement('script');
-script2.src="//cdn.jsdelivr.net/npm/ytpro";
+script2.src = "https://raw.githubusercontent.com/thabitalgodai/download_YouTube/main/ytpro.js";
 document.body.appendChild(script2);
 });
 `;
@@ -1366,10 +1379,9 @@ Android.getSNlM0e(secured);
 GeminiAT=await callbackSNlM0e();
 
 var sd = document.createElement('script');
-sd.src="//cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js";
+sd.src = "https://cdn.jsdelivr.net/gh/thabitalgodai/download_YouTube/showdown.min.js";
 document.body.appendChild(sd);
-
-}
+} 
 
 
 
@@ -1729,11 +1741,4 @@ ytproHh.innerHTML=`<style>#heartytprodiv a{text-decoration:none;} #heartytprodiv
 ytproHh.innerHTML+="Liked Videos<ul id='listurl'>";
 
 
-ytproHh.innerHTML+="<style>.thum{height:70px;border-radius:5px;}.thum img{float:left;height:70px;width:125px;border-radius:15px 0 0 15px;flex-shrink: 0;}</style>";
-
-document.body.appendChild(ytproH);
-ytproH.appendChild(ytproHh);
-
-ytproH.addEventListener("click",
-function(ev){
-if(!event.composedPath().includes(
+ytproHh.innerHTML+="<style>.thum{h
